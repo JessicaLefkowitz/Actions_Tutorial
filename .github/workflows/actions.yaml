@@ -1,14 +1,24 @@
 name: Actions Workflow
 
-on: [push, pull_request]
+on: 
+  push:
+  issues:
+    types: [opened, closed]
+  schedule:
+    - cron: '35, 55, 17, 18, 19 * * *'
+  pull request: 
+    types: [opened, closed, assigned, reopened]    
 
 jobs:
-  run-simple-github-actions:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: List Files
-        run:
+        run: |
          pwd
+         ls -a
+         cd /home/runner/work
+         ls -amkdir jess
          ls -a
          echo $GITHUB_SHA
          echo $GITHUB_REPOSITORY
@@ -16,9 +26,9 @@ jobs:
          echo "${{github.token}}"
 
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2.3.4
 
-      - name: simple Jason
+      - name: simple JS actions
         id: greet
         uses: actions/hello-world-javascript-action@v1.1
         with:
