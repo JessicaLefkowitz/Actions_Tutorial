@@ -6,8 +6,8 @@ on:
     types: [opened, closed]
   schedule:
     - cron: '*/5 * * * *'
-  pull request: 
-    types: [opened, closed, assigned, reopened]    
+  #pull request: 
+  #  types: [opened, closed, assigned, reopened]    
 
 jobs:
   run-github-actions:
@@ -18,7 +18,6 @@ jobs:
          pwd
          ls -a
          cd /home/runner/work
-         ls -mkdir jess
          ls -a
          echo $GITHUB_SHA
          echo $GITHUB_REPOSITORY
