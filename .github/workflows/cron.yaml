@@ -16,3 +16,4 @@ jobs:
         run: |
          pwd
          ls -a
+         echo "Hello ${{ github.event.inputs.name }}!"
