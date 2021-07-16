@@ -18,7 +18,6 @@ jobs:
          pwd
          ls -a
          cd /home/runner/work
-         ls -mkdir jess
          ls -a
          echo $GITHUB_SHA
          echo $GITHUB_REPOSITORY
